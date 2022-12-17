@@ -28,7 +28,7 @@ class Api
 
     public function getUsers()
     {
-
+        return $this->submit("getUsers");
     }
 
     public function getUser()
@@ -181,12 +181,12 @@ class Api
 
     }
 
-    public function submit(array $options = array()): mixed
+    public function submit(string $method, array $options = array()): mixed
     {
         $headers = array(
             'API-Password-Phrase' => $this->apiPasswdPhrase
         );
 
-        return Http::withHeaders($headers)->post($this->apiUrl,$options);
+        return Http::withHeaders($headers)->post($this->apiUrl."/".$method,$options);
     }
 }
