@@ -1,5 +1,7 @@
 <?php
 
+namespace WraptApiSdk\Services;
+
 use Illuminate\Support\Facades\Http;
 
 class Api
