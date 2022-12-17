@@ -189,6 +189,6 @@ class Api
             'API-Password-Phrase' => $this->apiPasswdPhrase
         );
 
-        return Http::withHeaders($headers)->post($this->apiUrl."/".$method,$options);
+        return Http::withHeaders($headers)->get($this->apiUrl."/".$method,$options);
     }
 }
